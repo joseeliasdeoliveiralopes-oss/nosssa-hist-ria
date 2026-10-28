@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nossa Aventura 💗</title>
+<style>
+:root{--s1:#a9c9ff;--s2:#ffd1dc;--s3:#ffe2a8;--gr:#6cbf5a;--gr2:#58a84a;--h1:#c3b0ea;--h2:#8fd18a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--s1:#3b3478;--s2:#b8628a;--s3:#f0a868;--gr:#3f8a47;--gr2:#347a3c;--h1:#7b66b0;--h2:#4a9a5a}}
+:root[data-theme="dark"]{--s1:#3b3478;--s2:#b8628a;--s3:#f0a868;--gr:#3f8a47;--gr2:#347a3c;--h1:#7b66b0;--h2:#4a9a5a}
+html,body{height:100%;margin:0;background:var(--s2)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+#app{--c:min(2.4vw,1.8vh);--hl:3%;--hr:calc(97% - 12*var(--c));position:relative;height:100%;overflow:hidden;background:linear-gradient(var(--s1),var(--s2) 55%,var(--s3));font-family:ui-monospace,Menlo,Consolas,"Courier New",monospace;image-rendering:pixelated}
+#app[data-s="2"]{--hl:calc(50% - 13*var(--c));--hr:calc(50% + 1*var(--c))}
+#app.meet{--hl:calc(50% - 11*var(--c));--hr:calc(50% - 1*var(--c))}
+svg{shape-rendering:crispEdges;display:block}
+#sun{position:absolute;top:9%;right:14%;width:64px;height:64px;border-radius:50%;background:#ffe27a;box-shadow:0 0 0 10px rgba(255,226,122,.4),0 0 0 22px rgba(255,226,122,.2),0 0 0 36px rgba(255,226,122,.1)}
+.cl{position:absolute;width:64px;height:14px;background:#fff;opacity:.85;box-shadow:12px -10px #fff,34px -10px #fff,44px 0 #fff;left:-120px;animation:dr 70s linear infinite}
+@keyframes dr{to{transform:translateX(calc(100vw + 240px))}}
+.hill{position:absolute;bottom:27%;border-radius:50% 50% 0 0}
+#h1{left:-25%;width:85%;height:22%;background:var(--h1)}
+#h2{right:-30%;width:95%;height:16%;background:var(--h2)}
+#gd{position:absolute;left:0;right:0;bottom:0;height:30%;border-top:4px solid var(--gr2);background:repeating-linear-gradient(90deg,var(--gr2) 0 6px,transparent 6px 22px) 0 0/100% 6px no-repeat,repeating-linear-gradient(0deg,var(--gr) 0 22px,var(--gr2) 22px 24px)}
+#fn{position:absolute;left:0;right:0;bottom:28.5%;height:30px;background:repeating-linear-gradient(90deg,#b07a45 0 6px,transparent 6px 24px)}
+#fn::before{content:"";position:absolute;left:0;right:0;top:6px;height:5px;background:#c8935a;box-shadow:0 12px #c8935a}
+.tr{position:absolute}
+.fw{position:absolute;z-index:2;transform-origin:50% 100%;animation:sw 2.6s ease-in-out infinite}
+@keyframes sw{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.bf{position:absolute;font-size:22px;animation:fy 20s ease-in-out infinite alternate}
+@keyframes fy{0%{transform:translate(0,0)}25%{transform:translate(30vw,-6vh)}50%{transform:translate(60vw,2vh)}75%{transform:translate(30vw,9vh)}100%{transform:translate(8vw,-3vh)}}
+.sp2{position:absolute;color:#ffd35c;font-size:16px;animation:tw 1.6s steps(2) infinite}
+@keyframes tw{50%{opacity:.15;transform:scale(.6)}}
+#ch{position:absolute;inset:0;pointer-events:none;z-index:5}
+#him,#her{position:absolute;bottom:9vh;transform-origin:50% 100%;--t:7deg}
+#him{left:var(--hl)}#her{left:var(--hr);--t:-7deg}
+.go #him,.go #her{transition:left 5s linear}
+.sp{width:calc(12*var(--c));animation:id 1.2s steps(1) infinite}
+@keyframes id{50%{transform:translateY(calc(var(--c)*-.5))}}
+.walk .sp{animation:bob .5s steps(1) infinite}
+@keyframes bob{50%{transform:translateY(calc(var(--c)*-1))}}
+.walk .fl,.walk .fr{animation:st .5s steps(1) infinite}
+.walk .fr{animation-delay:-.25s}
+@keyframes st{50%{transform:translateY(-1px)}}
+.kiss #him,.kiss #her{transform:rotate(var(--t))}
+.hug #him,.hug #her{animation:sq 1.3s ease-in-out infinite}
+@keyframes sq{50%{transform:rotate(calc(var(--t)*1.4)) translateY(calc(var(--c)*-.6))}}
+#arms{position:absolute;left:calc(50% - 4*var(--c));bottom:calc(9vh + 5*var(--c));width:calc(8*var(--c));height:calc(2*var(--c));background:#f6c9a0;box-shadow:0 calc(-1*var(--c)) #3b2a2f,0 var(--c) #3b2a2f;opacity:0}
+.kiss #arms{opacity:1}
+#fx{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:8}
+.fh{position:absolute;bottom:-20px;animation:rs var(--d,7s) linear forwards}
+.fh.st{animation:none}
+@keyframes rs{0%{transform:translateY(0);opacity:0}10%{opacity:1}100%{transform:translateY(var(--r,-105vh));opacity:0}}
+#ui{position:absolute;inset:0;z-index:10;padding:10px 14px 0;pointer-events:none}
+#ui>*{pointer-events:auto}
+.sc{display:none}
+.sc.on{display:block;animation:pop .4s steps(4)}
+@keyframes pop{from{transform:scale(.9);opacity:0}}
+.db{max-width:560px;margin:34px auto 0;background:#fff1d6;border:4px solid #d9a066;box-shadow:0 -4px #3b2a2f,0 4px #3b2a2f,-4px 0 #3b2a2f,4px 0 #3b2a2f,8px 10px 0 rgba(59,42,47,.28);padding:14px 16px;color:#3b2a2f;font:700 clamp(14px,4vw,18px)/1.5 ui-monospace,Menlo,Consolas,"Courier New",monospace;max-height:54vh;max-height:54dvh;overflow-y:auto;position:relative}
+.db p{margin:0 0 10px}
+.nm{position:absolute;top:-34px;left:-4px;background:#d94b5c;color:#fff;padding:2px 10px;border:4px solid #3b2a2f;font-size:14px}
+.sub{font-weight:400;color:#6b3a2a}
+.bt{font:inherit;font-weight:800;color:#fff;background:#e0506a;border:4px solid #3b2a2f;padding:10px 16px;margin:6px 10px 8px 0;cursor:pointer;box-shadow:0 6px #8a2e3f;touch-action:manipulation}
+.bt:active{transform:translateY(4px);box-shadow:0 2px #8a2e3f}
+.bt:focus-visible{outline:3px dashed #ffd35c;outline-offset:3px}
+.yes{background:#ff5d7a;animation:pl 1s steps(2) infinite}
+.yes::before{content:"▶ "}
+@keyframes pl{50%{box-shadow:0 6px #8a2e3f,0 0 0 4px #ffd35c}}
+.no{background:#b79ae0;color:#2f2330;box-shadow:0 6px #6d55a8}
+.no.fly{position:fixed;z-index:60;margin:0}
+#msg{min-height:3em;color:#8a2e3f;font-size:.9em}
+.bd{display:inline-block;background:#ffd35c;border:3px solid #3b2a2f;padding:2px 8px;margin-bottom:8px;font-size:.85em}
+.lk{display:flex;align-items:center;gap:10px;margin:6px 0 10px}
+#snd{position:absolute;top:8px;right:8px;z-index:30;font:700 12px ui-monospace,Menlo,monospace;background:#fff1d6;color:#3b2a2f;border:3px solid #3b2a2f;padding:4px 8px;cursor:pointer}
+#wp{position:absolute;inset:0;z-index:50;background:#3b2a2f;display:none;pointer-events:none}
+#wp.on{display:block;animation:wp .9s steps(10) both}
+@keyframes wp{0%{clip-path:inset(0 100% 0 0)}45%,55%{clip-path:inset(0)}100%{clip-path:inset(0 0 0 100%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cl,.bf,.fw,.sp2,.sp,.yes{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="app" data-s="1">
+  <div id="sun"></div>
+  <div class="cl" style="top:12%"></div><div class="cl" style="top:24%;animation-delay:-35s"></div>
+  <div class="hill" id="h1"></div><div class="hill" id="h2"></div>
+  <div id="bg"></div>
+  <div id="fn"></div><div id="gd"></div>
+  <div id="fl"></div>
+  <div id="ch"><div id="him"></div><div id="her"></div><div id="arms"></div></div>
+  <div id="fx"></div>
+  <button id="snd" type="button" aria-pressed="false">🔇 Som: off</button>
+  <div id="ui">
+    <div class="db sc on" id="s1">
+      <span class="nm">Seu amor 💗</span>
+      <p>Ei, meu amor... 💗 Quer continuar vivendo essa aventura comigo?</p>
+      <p class="sub">Tenho uma pergunta importante para a minha pessoa favorita...</p>
+      <button class="bt yes" id="yes" type="button">SIM! ❤️</button><button class="bt no" id="no" type="button">Não 😳</button>
+      <div id="msg" aria-live="polite"></div>
+    </div>
+    <div class="db sc" id="s2">
+      <span class="nm">Nossa jornada 🌸</span>
+      <p>Dia 08/09. Foi quando o Tinder resolveu ser o melhor mapa da minha vida e colocou a gente na mesma fase. 🗺️</p>
+      <p>Nossa primeira conversa foi estranha e engraçada, dessas que não deveriam dar certo... e mesmo assim eu já estava rindo sozinho olhando para o celular. 😂</p>
+      <p>Eu gosto de você do jeitinho que você é: doida, bocuda e engraçada. É por isso que tudo fica mais divertido quando você está por perto. 💗</p>
+      <p>Guardo com muito carinho o dia em que a gente dormiu juntinho e passou o dia inteiro grudado, sem pressa nenhuma. Foi um dos melhores saves da minha vida. 🏡</p>
+      <p>Quero continuar criando memórias, dividindo risadas e desbloqueando novas fases ao seu lado. O jogo fica muito melhor em dupla. ✨</p>
+      <button class="bt yes" id="cont" type="button">Continuar ➜</button>
+    </div>
+    <div class="db sc" id="m1" style="text-align:center"><p style="margin:0">Vocês desbloquearam: Amor Verdadeiro! 💖</p></div>
+    <div class="db sc" id="fin">
+      <span class="bd">★ Evento especial desbloqueado ★</span>
+      <p>Continue jogando para desbloquear a próxima surpresa... 🎮❤️</p>
+      <div class="lk"><span id="lock"></span><span>Próxima fase bloqueada...</span></div>
+      <p class="sub" style="margin:0">Nossa aventura ainda tem muitas histórias para viver. 💕</p>
+    </div>
+  </div>
+  <div id="wp"></div>
+</div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},R=matchMedia('(prefers-reduced-motion:reduce)').matches,app=$('#app');
+var P={k:'#3b2a2f',s:'#f6c9a0',H:'#6b3a2a',b:'#2f2330',r:'#d94b5c',p:'#ff8fb1',m:'#f08a9a',g:'#4f9d45',G:'#3b7d3a',u:'#4a7fc1',d:'#2d4f8a',w:'#fff8e8',y:'#ffd35c',n:'#7a4a2b'};
+function px(rows,o,legY,sc){var W=rows[0].length,a='',l='',r='';
+ rows.forEach(function(row,y){var x=0;
+  if(y>=legY){for(;x<W;x++){var c=row[x];if(c==='.')continue;var t='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+((o&&o[c])||P[c])+'"/>';if(x<6)l+=t;else r+=t}return}
+  while(x<W){var ch=row[x];if(ch==='.'){x++;continue}var e=x;while(e<W&&row[e]===ch)e++;
+   a+='<rect x="'+x+'" y="'+y+'" width="'+(e-x)+'" height="1" fill="'+((o&&o[ch])||P[ch])+'"/>';x=e}});
+ return '<svg class="'+(sc?'':'sp')+'" viewBox="0 0 '+W+' '+rows.length+'"'+(sc?' style="width:'+W*sc+'px"':'')+'>'+a+(l?'<g class="fl">'+l+'</g>':'')+(r?'<g class="fr">'+r+'</g>':'')+'</svg>'}
+var HER=['...kkkkkk...','..kHHHHpHk..','.kHHHHHHHHk.','.kHHHssHHHk.','.kHskssksHk.','.kHsmssmsHk.','.kHHsmmsHHk.','..kHkkkkHk..','.kHkrrrrkHk.','.ksrrpprrsk.','.ksrrrrrrsk.','..krrrrrrk..','.krrrrrrrrk.','.kppppppppk.','...kskksk...','..knnkknnk..'];
+var HIM=['...kkkkkk...','..kuuuuuuk..','.kuuuyyuuuk.','.kddddddddk.','.kbskssksbk.','.kbsmssmsbk.','.kbssmmssbk.','...kksskk...','.kggggggggk.','.ksggwwggsk.','.ksggwwggsk.','..kggwwggk..','..kuuuuuuk..','..kuuuuuuk..','..kuukkuuk..','..knnkknnk..'];
+var HT=['.rr.rr.','rwrrrrr','rrrrrrr','.rrrrr.','..rrr..','...r...'],TR=['...gggg...','..gggggg..','.ggggGggg.','gggggggggg','.gggggGgg.','..gggggg..','....nn....','....nn....'],FW=['.ppp.','ppypp','.ppp.','..g..','..g..'],LK=['..kkkk..','.k....k.','.k....k.','kkkkkkkk','kyyyyyyk','kyykkyyk','kyyykyyk','kyyyyyyk','kkkkkkkk'];
+var H3=px(HT,null,99,3),H4=px(HT,{r:'#ff8fb1'},99,4);
+$('#him').innerHTML=px(HIM,null,14);$('#her').innerHTML=px(HER,null,14);$('#lock').innerHTML=px(LK,null,99,3);
+[[1,27],[66,27.5],[86,29]].forEach(function(t){var d=document.createElement('div');d.className='tr';d.style.cssText='left:'+t[0]+'%;bottom:'+t[1]+'%';d.innerHTML=px(TR,null,99,7);$('#bg').appendChild(d)});
+var cols=['#ff8fb1','#ff6b6b','#b79ae0','#ffd35c','#fff8e8'];
+for(var i=0;i<20;i++){var f=document.createElement('div');f.className='fw';f.style.cssText='left:'+(Math.random()*96)+'%;bottom:'+(1+Math.random()*24)+'%;animation-delay:-'+(Math.random()*3)+'s';f.innerHTML=px(FW,{p:cols[i%5]},99,3);$('#fl').appendChild(f)}
+for(i=0;i<2;i++){var b=document.createElement('span');b.className='bf';b.textContent='🦋';b.style.cssText='left:'+(10+i*40)+'%;top:'+(38+i*8)+'%;animation-delay:-'+(i*9)+'s';$('#bg').appendChild(b)}
+for(i=0;i<12;i++){var q=document.createElement('span');q.className='sp2';q.textContent='✦';q.style.cssText='left:'+(Math.random()*95)+'%;top:'+(5+Math.random()*50)+'%;animation-delay:-'+(Math.random()*2)+'s';$('#bg').appendChild(q)}
+var fx=$('#fx');
+function heart(x,y,r){var d=document.createElement('i');d.className='fh';d.innerHTML=Math.random()<.5?H3:H4;d.style.left=x+'%';d.style.bottom=y+'%';d.style.setProperty('--d',(5+Math.random()*4)+'s');if(r)d.style.setProperty('--r',r);if(R){d.classList.add('st')}else{d.addEventListener('animationend',function(){d.remove()})}fx.appendChild(d)}
+if(!R)setInterval(function(){heart(Math.random()*96,-2)},1300);
+function burst(){var n=R?6:16;for(var j=0;j<n;j++)heart(38+Math.random()*24,26+Math.random()*10,'-'+(25+Math.random()*30)+'vh')}
+var AC=null,on=false;
+function tone(f,t,d){try{if(!on)return;AC=AC||new(window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain(),n=AC.currentTime+t;o.type='square';o.frequency.value=f;g.gain.setValueAtTime(.05,n);g.gain.exponentialRampToValueAtTime(.001,n+d);o.connect(g);g.connect(AC.destination);o.start(n);o.stop(n+d+.02)}catch(e){}}
+function chime(){[523,659,784,1047,1319].forEach(function(f,i){tone(f,i*.16,.3)})}
+$('#snd').addEventListener('click',function(){on=!on;this.setAttribute('aria-pressed',on);this.textContent=on?'🔊 Som: on':'🔇 Som: off';try{if(on){AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.resume)AC.resume()}}catch(e){}tone(660,0,.12)});
+function go(fn){var w=$('#wp');w.className='';void w.offsetWidth;w.className='on';setTimeout(function(){document.querySelectorAll('.sc').forEach(function(e){e.classList.remove('on')});fn()},R?50:450)}
+var no=$('#no'),yes=$('#yes'),msg=$('#msg'),n=0,M=['Ei! Esse botão está escorregadio 😳','Quase! Tenta de novo... 😏','O botão tem medo de você 🐔','Erro 404: ‘Não’ não encontrado','Você quis dizer SIM, né? 💗','Esse botão pediu demissão 🏃','Nem o botão acredita nisso! 😂','Desiste, o ‘Sim’ está crescendo 😌'];
+function dodge(e){if(e)e.preventDefault();msg.textContent=M[n%M.length];n++;no.classList.add('fly');var w=Math.max(0,innerWidth-no.offsetWidth-16),h=Math.max(0,innerHeight-no.offsetHeight-16);no.style.left=(8+Math.random()*w)+'px';no.style.top=(8+Math.random()*h)+'px';yes.style.transform='scale('+Math.min(1+n*.06,1.4)+')';tone(220,0,.1)}
+no.addEventListener('pointerenter',dodge);no.addEventListener('pointerdown',dodge);no.addEventListener('click',dodge);
+yes.addEventListener('click',function(){yes.disabled=true;tone(784,0,.12);tone(1047,.12,.2);go(function(){app.dataset.s='2';$('#s2').classList.add('on')})});
+$('#cont').addEventListener('click',function(){this.disabled=true;tone(784,0,.12);go(kiss)});
+function kiss(){app.className='';app.dataset.s='3';
+ var q=function(f,t){setTimeout(f,R?t/12:t)};
+ q(function(){app.classList.add('go','meet','walk')},700);
+ q(function(){app.classList.remove('walk')},5800);
+ q(function(){app.classList.add('kiss');burst();chime();$('#m1').classList.add('on')},6900);
+ q(function(){app.classList.add('hug')},9800);
+ q(function(){$('#m1').classList.remove('on');$('#fin').classList.add('on')},11800)}
+})();
+</script>
+</body>
+</html>
